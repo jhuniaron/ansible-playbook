@@ -1,7 +1,5 @@
 ---
 - hosts: target-machine
-  tasks:
-          - name: Create folder
-            file:
-                    path: /samplefolder
-                    state: directory
+  roles:
+    - { role: create_folder_role, tags: ["create_folder"] }
+    - { role: create_files_role, tags: ["create_files"] }
